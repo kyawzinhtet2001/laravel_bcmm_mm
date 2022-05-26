@@ -15,7 +15,7 @@ class ProductController extends Controller
      * @param Request $request
      * @return Response Object
      * @author Kyaw zin htet
-     * @created_at 25/5/2022
+     * @create 25/5/2022
      */
     public function create(Request $request){
         $insert=[
@@ -39,6 +39,7 @@ class ProductController extends Controller
     /**
      * reterieve all data from Products table.
      * @author kyaw zin htet
+     * @create 25/5/2022
      */
     public function index(){
         $products=Product::where('deleted_at',null)->get();
