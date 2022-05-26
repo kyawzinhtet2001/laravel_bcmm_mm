@@ -1,5 +1,6 @@
 <?php
 
+// use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -44,4 +45,11 @@ Route::middleware(["CheckAdmin","CheckSingle"])->prefix('/party')->group(functio
 
 Route::post('/product/create',[ProductController::class,'create']);
 Route::get('/product/',[ProductController::class,'index']);
+Route::get('/product/',[ProductController::class,'index']);
+Route::put('/product/update/{id?}',[ProductController::class,'update']);
+Route::delete('/product/delete/{id?}',[ProductController::class,'destory']);
+Route::get('/product/{id?}',[ProductController::class,'show']);
 // Route::post('/product/create',"Api\ProductController@create");
+
+
+Route::apiResource("/category",'Api\CategoryController');
